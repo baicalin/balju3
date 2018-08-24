@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2018_06_06_071254) do
   create_table "chat_rooms", force: :cascade do |t|
     t.string "title"
     t.integer "owner_id"
+    t.float "lat"
+    t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_chat_rooms_on_owner_id"
