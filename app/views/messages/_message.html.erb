@@ -1,15 +1,14 @@
-<div class="card">
-  <div class="card-block">
-    <div class="row">
-      <div class="col-md-1">
-        <%# gravatar_for message.owner %>
-      </div>
-      <div class="col-md-11">
-        <p class="card-text">
-          <span class="text-muted"><%= message.owner.email %> at <%= message.timestamp %> says</span><br>
-          <%= message.body %>
-        </p>
-      </div>
+
+<li class="left  clearfix">
+  <div class="chat-body clearfix">
+    <div class="header">
+      <strong class="primary-font"><%= message.owner.email %></strong>
+      <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
     </div>
+    <p>
+      <%= message.body %>
+    </p>
   </div>
-</div>
+</li>
+
+

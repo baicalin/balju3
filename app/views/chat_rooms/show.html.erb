@@ -1,13 +1,24 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 <h1><%= @chat_room.title %></h1>
 <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+  <ul class="chat">
   <%= render @chat_room.messages %>
+  </ul>
 </div>
+
 <%= form_for @message, url: '#' do |f| %>
   <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
+    <%= f.text_area :body, class: 'form-control', style:
+    "background-color: #cce6ff; width:100%;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;" %>
     <small class="text-muted">From 2 to 1000 characters</small>
   </div>
 
   <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
 <% end %>
+
